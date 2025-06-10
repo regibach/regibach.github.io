@@ -1,30 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title>js01_Estrutura2.htm</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-<meta charset="utf-8"/> 
+    <meta charset="UTF-8">
+    <title>App de Treino – Reginaldo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=x4fituYJuC_VFVAEzYKt6_GfZwPSnvuqDVRQdyVFhuh5nE9mbBuHgom4kCHLn-dw1sXuQP2cqUEKgLNcif7RNvB5IvIIDW5D9Sy3gmdeQjVRTZbM6uzA9N7RRMGNiI9NPcbj02XUrS44HHw-tHpOE6aAwX_atzPA1igh_-6VP5-PXbRfHqynBz-4q8zH3BszFaiSz5vpFj4QaCJby9iuLwT3G55VhPsohzFABSBVFCdMJJ4HRsnWCT9CxT91IccV3ojAPjIK01JeS3ABnPZe0GHyNMC80kATyBFVphlx7xmI3_6BPGDE0bHOkS77atMdTEJ3MXPuneQVKY7gHjEOFXaYLyu8MtEM7I8_kM4XbmBL-w-sKWayPcXCPVpxJyDr3x5OvWouG2utk6LGqhP0tvrgPtFOHnb5azoP0rczOH6d5VfoBPVRbNEYNPNctpfByk0SjxVIOvKjWFcdZmj1hXSdAtPAQLejPdW28iUs9UHMXJIEcpWxawA-9n-6j-GtMM41iepq7KovUsSv13X9buhhMZJeoOYHX44RyQ3VtHVUPlV0myfWsP6Rtk0Rsmpsb-mhsqKzSWg0dB-l0y98pyUiCz2NiSF89smotH_SYE96GR3TSdSqf6_FmKslFuIwaU_efrNuTTfFNS5XeT8wfQREo4XyjUExVuOrdYPk-_-kz7Qk9yXoRPz75JvUUXj4VoritGhIF1tB7VVHPAE5f8KW6v5g-NO_mkmJt68-6WYVe4DKdOWmTOaJWoU4aZwfDs51qp1AefXo6SICgR8yEQXHWOhRtPikjeIKxxOw3pgZHm81gOSNYmwhwXgKKFgs2UvPA7ZufJK05JxanRHFz11MUUpWc2J6GfyKMuSA4SkkIMZV7o1un49P8ZZW3ZHRzt998i8WRqVnR34NGWpSE8wtrIX0Lsf3D-OF30fCAUpLQ0eXCATmGSth8t_DxETaGpJoiuYPLIiZ2S_Axfod1lwI7PrI-9O28raVgfnwRB5p7-jKBtHX2fRd3qTZho0cm9JRoGcPBa35SA8hUVbYeGfuhgB3T8Ycp_myR_8waYVKcOsPC6DFbSrtYcNxjBWDycUFixHceFs0vt_iZkf41vljUHEX71J9C5LQCZ0lmSyjN9jF0zeM64eVMPidu-X2GnAozhO27DV-CbazXVYQqzhlJu95nPN3Fb50vl1DUdR2fwQ9HKG2IBJNmlsFp8Cq_QfLF6SRO7qoGpdjvLd4YZSkzehmR4VNLWKUxl35gE1k5iBzzVx2Rd5-lXWuauV20UFy9OJLSaFg8OtQhnRxXx2gLXdgEKDPmMXa99PMBofdghG98JvseLfEnDTCUUd0Mhw4mA7jShg2_NwKLBOc-_LyC_gtdcVd0tIxMveonNDwV7Knur6Srukx24Ih7QDvu6S8u9D8FuGiD4k5kvHr3XlO0L9eiZaSLjuRUQXfzIgto2HOemjK0ONUW8A5w3Wms5J2mH0U88dZw2g1alhQPDsZ7D3NDkPO2NpK74IS0rEB_mB3estjIHrT3FuIIytP9zZOeuAxraH6V2wGVHsXJvKVoL8zSBEGgx8CFIK7M6tVWyNhcyKsIQKzhwtUmm7P" nonce="d6449b7162158023a8bd949ad3e3dacc" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPWI5MDBjZTBjZDImYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctYTpyMzAxNzgzMTgzNjQ5ODE4MTEmdmlldz1hdHQmencmZGlzcD1zYWZlJnNhZGRiYXQ9QU5HamRKOHZZWVY3TWVEeE9Va3hmYUtqSEo1dXJXcHZOXzc0UTVHZHV3cWM1eEpncU5NOVlJX1QzZnA5WXpWWnpuSktXTEljcmhuenNSY2VubmxENlVYdFZsSmZhM3lSSGV5QnZmdmQ5RGdLWHQtMWRHYmFKOWVqeExGeFl6YV9iTjJZSkFsT0JiaTJqbExuWHY1R2h0MzEwY0huRXNFY3Rqc01qM1dqb3dJYnhKd2toaHVPeEV5akRvMTNDM19WbUNUOTY4TjU5azZTc1VjZllIZ2xWbEFRWUtqMUs1dU5RM0dSMkg4bjB4eDd3VlRsU1BTemV4WWdoMUM4T3RXcWVKZzkwWGlsek1YWDg0dmlWUGhtOV9QVWlfQ3pLRlNfRUpVME1TSi1FazFVaFgtVkllc2NVUHVNTkU3SHFXcXZfakp3Zk9JbVdJUkhERG9QZ1VJNVllRTZNZHZ2X3M3cGdzOUFFVEFOLWNPd29pdFFvdUhMTEEtek96aEU0QkVGVjAwVkttREJfdUpOTU9vYU5qc1VVTVlLWUVoUHBUdXNhMkJ0SHNLTkNPM0xZbGZoa1RaalgtT0pGa1JEc0wwVnNiNmJydjAzUkNadTZtVV9DbGxUdHF6eS1fRHlMbnI2cDVwOFJ5ck5rOEg4SHNvQnM1R2otZG1EcE14czMyR181enU5VFY4VFdOQjJyMS05NG1RZkZTc3g4eUd2dEluQUpVZzJBcy1NYWJCazNBTk9Sb1VQWjY0NWI4a0FHaV9SVE51SlFucFltLVZfNGdDZDV5b0hvdHRJa2kzZ0FtV2lsQWJ0TGpLaDVlZW16aGdWU3dYUWU3NU1HdE9mNVpuazhSY0E2dDc0MGNBMlJybjg2UGpISzZ2R2NKLXFLVjVzTWpRdUZiLWhyaF9ESllxeWNyZEdBTFRGdmdQSFBES1o2cFBjOTVlRVIwTWNNTGk5M0kxTzMtN0QtZ2FlNEpFeHJXbGJwRWp2UF9uOVdPUzdIZzRCRHhvSTJQQWljWTc5bkJpMlpPM1h2UE4wVTlhYWE5TzJ1OVNpV3VuUFBsak1ZRk9xQWxGUmhYZG1rZnVxRUNUSEg4WVlCeHlCYlA5WVZ1dmRLdlZrNXpWeXAxS0pFTWpNWU1zV2ZFOURMSm83V3FkUTZGckxTN01YWnlheHJNb2FEcWZoSV9CRzdMVlJPWUF4X0dBRnVBalBVNnpjbzRUOG54MnE1MDJoTmFxb1p2M0xZdHRJNVF3eEdYZUlKT09fS2JSV0k5d0UxeEFpaW9mT2tYUTU0YzUzbXhQMjg4YUt3eGd1d3BxOXdEcjgxX3pQX3J2S2tLR1ZSSlFubTBrQWVwUm1heTJsQXdB"/><style>
+        body {
+            font-family: sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .dark-mode {
+            background: #121212;
+            color: #e0e0e0;
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+        .dia {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dark-mode .dia {
+            background: #1e1e1e;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+        .cronometro {
+            margin-top: 10px;
+        }
+        button {
+            padding: 6px 12px;
+            margin-right: 10px;
+        }
+        .toggle-mode {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-<h3>Programa de Boas Vindas!</h3>
-<script language="javascript">
-<!--
-/* 	Objetivo: Capturar o nome do usuário e apresentar uma saudação personalizada 
-	Definir as variáveis com o prefixo js_
- 	Elementos de Entrada: método prompt do objeto window
-	Elementos de Saída: método write do objeto document 
-*/
 
-/* Definição de Variáveis */
-var js_nome;
+<button class="toggle-mode" onclick="toggleDarkMode()">Modo Noturno</button>
+<h1>App de Treino ABC – Reginaldo Steinbach</h1>
 
-/* Entrada de Dados */
-js_nome = window.prompt('Entre com seu nome: ' , 'Digite seu nome nesta caixa');
+<div class="dia">
+    <h2>Treino A – Peito (protegendo o ombro)</h2>
+    <label><input type="checkbox"> Supino inclinado com halteres – 3x10</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Peck deck – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Crossover polia baixa – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Flexão inclinada – 3x10</label>
+    <label><input type="checkbox"> Tríceps corda – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Tríceps banco – 2x12</label>
+    <div class="cronometro">
+        <button onclick="startTimer(this)">▶ Iniciar 60s</button>
+        <span class="timer">60</span> segundos
+    </div>
+</div>
 
-/* Saída de Dados */
-document.write('Ol\u00e1 '  +  js_nome + ' Seja Bem Vindo!'); // Mensagem de Saudação Personalizada
+<div class="dia">
+    <h2>Treino B – Costas e Bíceps</h2>
+    <label><input type="checkbox"> Puxada frontal – 4x10</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Remada baixa – 4x10</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Remada unilateral – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Encolhimento de ombros – 3x15</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Rosca direta – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Rosca alternada – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+</div>
 
-//-->
+<div class="dia">
+    <h2>Treino C – Pernas e Core</h2>
+    <label><input type="checkbox"> Leg press 45° – 4x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Agachamento guiado – 3x10</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Cadeira extensora – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Mesa flexora – 3x12</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Abdutora – 3x15</label>
+    <input type="text" placeholder="Carga usada">
+    <label><input type="checkbox"> Abdominal na bola – 3x20</label>
+    <label><input type="checkbox"> Prancha isométrica – 3x30s</label>
+</div>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+function startTimer(button) {
+    const span = button.nextElementSibling;
+    let time = 60;
+    button.disabled = true;
+    span.textContent = time;
+    const interval = setInterval(() => {
+        time--;
+        span.textContent = time;
+        if (time <= 0) {
+            clearInterval(interval);
+            button.disabled = false;
+        }
+    }, 1000);
+}
 </script>
+
 </body>
 </html>
